@@ -1,22 +1,18 @@
-package com.company;
-
 import java.util.Scanner;
-
 public class h2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Введите строку");
-        String str = sc.next();
-        char[] arr = str.toCharArray();
-        for (int i = 0; i < str.length(); i++) {
-            int b = arr[i];
-            if (b >= 48 && b <= 57) {
-                arr[i] = '*';
+        int n = sc.nextInt();
+        int ar[] = new int[n];
+        int max = 0;
+        int j = -1;
+        for (int i = 0; i < n ; i++) {
+            ar[i] = sc.nextInt();
+            if(Math.abs(ar[i])>max){
+                max = Math.abs(ar[i]);
+                j=i;
             }
         }
-        str = new String(arr);
-        System.out.println(str);
+        System.out.println(j);
     }
-
 }
-

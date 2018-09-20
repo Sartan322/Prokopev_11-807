@@ -1,36 +1,23 @@
-package com.company;
-
 import java.util.Scanner;
-
 public class h4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Введите строку");
-        String str = sc.next();
-        System.out.println("Введите ключ (l - нижний регистр/u - верхний регистр):");
-        String c = sc.next();
-        char[] ch = c.toCharArray();
-        char[] strChar = str.toCharArray();
-        switch (ch[0]) {
-            case 117:
-                for (int i = 0; i < str.length(); i++) {
-                    if (strChar[i] >= 97 && strChar[i] <= 122){
-                        int x = strChar[i]-32;
-                        strChar[i]= (char) x;
-                    }
-                }
+        int n = sc.nextInt();
+        int ar[] = new int[n];
+        int v = 0;
+        ar[0]=sc.nextInt();
+        for (int i = 1; i < n ; i++) {
+            ar[i]=sc.nextInt();
+            if (ar[i]<ar[i-1]&&i<(n+1)/2||ar[i]>ar[i-1]&&i>(n+1)/2) {
+                v=-1;
                 break;
-            case 108:
-                for (int i = 0; i < str.length(); i++) {
-                    if (strChar[i] >= 65 && strChar[i] <= 90){
-                        int x = strChar[i]+32;
-                        strChar[i]= (char) x;
-                    }
-                }
-                break;
+            }
         }
-        for (int i = 0; i <str.length() ; i++) {
-            System.out.print(strChar[i]);
+        if(v==0){
+            System.out.println("Yes");
+        }
+        else{
+            System.out.println("No");
         }
     }
 }
