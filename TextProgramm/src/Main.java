@@ -17,9 +17,10 @@ public class Main {
                 case 1:
                     switch (y){
                         case 1:
-                            cs.toListString();
+                            cs.toListString(y);
                             break;
                         case 2:
+                            cs.toListString(y);
                             break;
 
                         default:
@@ -30,9 +31,10 @@ public class Main {
                 case 2:
                     switch (y){
                         case 1:
-                            cs.toListFile();
+                            cs.toListFile(y);
                             break;
                         case 2:
+                            cs.toListFile(y);
                             break;
                         default:
                             System.out.println("Вы ввели некорректное значение");
